@@ -107,3 +107,784 @@ h1:before, .anchor:before {
     background-color: #00369f;
     font-size: .8em;
 }
+
+/* Mengzhen Li portfolio — Morandi palette */
+$morandi-ink: #343a3d;
+$morandi-slate: #59686f;
+$morandi-blue: #718a96;
+$morandi-mauve: #a88991;
+$morandi-sage: #9aa89b;
+$morandi-stone: #e7e1d9;
+$morandi-paper: #f7f5f1;
+$morandi-white: #fffdf9;
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  color: $morandi-ink;
+  background:
+    linear-gradient(rgba($morandi-blue, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba($morandi-blue, 0.035) 1px, transparent 1px),
+    $morandi-paper;
+  background-size: 42px 42px;
+  line-height: 1.68;
+  text-rendering: optimizeLegibility;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid $morandi-mauve;
+  outline-offset: 4px;
+}
+
+.skip-link {
+  position: fixed;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 100;
+  padding: 0.7rem 1rem;
+  color: $morandi-white;
+  background: $morandi-slate;
+  border-radius: 999px;
+  text-decoration: none;
+  transform: translateY(-160%);
+  transition: transform 160ms ease;
+
+  &:focus {
+    transform: translateY(0);
+  }
+}
+
+.masthead {
+  background: rgba($morandi-paper, 0.94);
+  border-bottom-color: rgba($morandi-slate, 0.15);
+  backdrop-filter: blur(16px);
+}
+
+.greedy-nav {
+  background: transparent;
+
+  a {
+    color: $morandi-slate;
+    font-size: 0.88rem;
+    font-weight: 650;
+  }
+
+  .visible-links a:before {
+    height: 2px;
+    background: $morandi-mauve;
+  }
+}
+
+#main {
+  margin-top: 2.25rem;
+}
+
+.sidebar {
+  @include breakpoint($large) {
+    position: sticky;
+    top: 5.5rem;
+  }
+}
+
+.profile_box {
+  @include breakpoint(max-width $large) {
+    padding: 1rem;
+    background: rgba($morandi-white, 0.82);
+    border: 1px solid rgba($morandi-slate, 0.12);
+    border-radius: 18px;
+  }
+}
+
+.author__avatar img {
+  object-fit: cover;
+  object-position: 50% 30%;
+  aspect-ratio: 1 / 1;
+  border: 0;
+  box-shadow: 0 14px 35px rgba($morandi-slate, 0.18);
+
+  @include breakpoint($large) {
+    padding: 4px;
+    background: $morandi-white;
+    border: 1px solid rgba($morandi-slate, 0.18);
+  }
+}
+
+.sidebar .author__name {
+  color: $morandi-ink;
+  font-weight: 750;
+  letter-spacing: -0.025em;
+}
+
+.author__bio {
+  color: $morandi-slate;
+}
+
+.author__urls {
+  a {
+    color: $morandi-slate;
+    text-decoration: none;
+
+    &:hover {
+      color: darken($morandi-slate, 14%);
+    }
+  }
+
+  .fa,
+  .fas,
+  .fab {
+    color: $morandi-mauve;
+  }
+}
+
+.page__content {
+  color: $morandi-ink;
+
+  #about-me {
+    margin-top: 0;
+
+    &:before {
+      display: none;
+    }
+  }
+
+  a {
+    color: $morandi-slate;
+  }
+}
+
+.intro-panel {
+  position: relative;
+  min-height: 74vh;
+  padding: clamp(2.5rem, 7vw, 6.75rem) clamp(1.25rem, 5vw, 5rem);
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 92% 10%, rgba($morandi-mauve, 0.22), transparent 30%),
+    linear-gradient(135deg, rgba($morandi-white, 0.98), rgba($morandi-stone, 0.58));
+  border: 1px solid rgba($morandi-slate, 0.13);
+  border-radius: 32px;
+  box-shadow: 0 28px 80px rgba($morandi-slate, 0.1);
+
+  &:after {
+    position: absolute;
+    right: -6rem;
+    bottom: -8rem;
+    width: 22rem;
+    height: 22rem;
+    content: "";
+    border: 1px solid rgba($morandi-blue, 0.18);
+    border-radius: 50%;
+    box-shadow: 0 0 0 3rem rgba($morandi-sage, 0.055), 0 0 0 6rem rgba($morandi-mauve, 0.04);
+    pointer-events: none;
+  }
+
+  h1 {
+    max-width: 860px;
+    margin: 1rem 0 1.4rem;
+    padding: 0;
+    color: $morandi-ink;
+    border: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(2.75rem, 6vw, 5.6rem);
+    font-weight: 500;
+    letter-spacing: -0.055em;
+    line-height: 0.98;
+  }
+}
+
+.intro-avatar {
+  display: none;
+}
+
+.eyebrow,
+.section-label,
+.card-label {
+  margin: 0;
+  color: $morandi-slate;
+  font-size: 0.76rem !important;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.intro-lede {
+  max-width: 760px;
+  margin: 0;
+  color: #465157;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.22rem, 2.2vw, 1.58rem) !important;
+  line-height: 1.48;
+}
+
+.intro-detail {
+  max-width: 700px;
+  margin-top: 1.15rem !important;
+  color: #687176;
+}
+
+.intro-actions {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 2rem;
+}
+
+.page__content .button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0.75rem 1.25rem;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 750;
+  text-decoration: none;
+  transition: transform 160ms ease, background 160ms ease, border-color 160ms ease;
+
+  &:hover {
+    text-decoration: none;
+    transform: translateY(-2px);
+  }
+}
+
+.button--primary {
+  color: $morandi-white !important;
+  background: $morandi-slate;
+
+  &:hover {
+    background: darken($morandi-slate, 8%);
+  }
+}
+
+.button--secondary {
+  color: $morandi-slate !important;
+  background: rgba($morandi-white, 0.72);
+  border-color: rgba($morandi-slate, 0.25) !important;
+
+  &:hover {
+    background: $morandi-white;
+  }
+}
+
+.impact-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  max-width: 800px;
+  margin-top: clamp(2.5rem, 6vw, 5rem);
+  overflow: hidden;
+  background: rgba($morandi-slate, 0.16);
+  border: 1px solid rgba($morandi-slate, 0.12);
+  border-radius: 18px;
+
+  article {
+    display: grid;
+    gap: 0.25rem;
+    padding: 1.1rem;
+    background: rgba($morandi-white, 0.78);
+  }
+
+  strong {
+    color: $morandi-slate;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(1.6rem, 3vw, 2.25rem);
+    font-weight: 500;
+    line-height: 1;
+  }
+
+  span {
+    color: #687176;
+    font-size: 0.78rem;
+    line-height: 1.35;
+  }
+}
+
+.portfolio-section {
+  padding: clamp(5rem, 9vw, 8rem) 0;
+  scroll-margin-top: 5rem;
+
+  & + .portfolio-section {
+    border-top: 1px solid rgba($morandi-slate, 0.13);
+  }
+}
+
+.section-heading {
+  max-width: 720px;
+  margin-bottom: 2.5rem;
+
+  h2 {
+    margin: 0.65rem 0 0.75rem;
+    color: $morandi-ink;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(2.15rem, 4.6vw, 4rem);
+    font-weight: 500;
+    letter-spacing: -0.045em;
+    line-height: 1.06;
+  }
+
+  > p:last-child {
+    max-width: 650px;
+    color: #687176;
+  }
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.project-card {
+  position: relative;
+  padding: clamp(1.35rem, 3vw, 2.1rem);
+  overflow: hidden;
+  background: rgba($morandi-white, 0.86);
+  border: 1px solid rgba($morandi-slate, 0.13);
+  border-radius: 22px;
+  box-shadow: 0 14px 40px rgba($morandi-slate, 0.055);
+
+  h3 {
+    margin: 0.55rem 0 0.8rem;
+    color: $morandi-ink;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.7rem;
+  }
+
+  p {
+    color: #5f686d;
+  }
+}
+
+.project-card--featured {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 1.5rem;
+  background:
+    linear-gradient(135deg, rgba($morandi-blue, 0.13), rgba($morandi-sage, 0.12)),
+    $morandi-white;
+
+  h3 {
+    font-size: 2.2rem;
+  }
+}
+
+.project-index {
+  color: rgba($morandi-mauve, 0.65);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.project-card:not(.project-card--featured) .project-index {
+  position: absolute;
+  top: 1.35rem;
+  right: 1.5rem;
+}
+
+.result-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.65rem;
+  margin: 1.25rem 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    padding: 0.85rem;
+    color: #5f686d;
+    background: rgba($morandi-white, 0.58);
+    border: 1px solid rgba($morandi-slate, 0.1);
+    border-radius: 12px;
+    font-size: 0.82rem !important;
+  }
+
+  strong {
+    display: block;
+    color: $morandi-slate;
+    font-size: 1.25rem;
+  }
+}
+
+.project-result {
+  padding-top: 1rem;
+  border-top: 1px solid rgba($morandi-slate, 0.12);
+}
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: 1rem;
+
+  span {
+    padding: 0.28rem 0.65rem;
+    color: darken($morandi-sage, 28%);
+    background: rgba($morandi-sage, 0.17);
+    border-radius: 999px;
+    font-size: 0.72rem;
+    font-weight: 700;
+  }
+}
+
+.publication-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    display: grid;
+    grid-template-columns: 75px minmax(0, 1fr);
+    gap: 1.25rem;
+    padding: 1.45rem 0;
+    border-top: 1px solid rgba($morandi-slate, 0.14);
+
+    &:last-child {
+      border-bottom: 1px solid rgba($morandi-slate, 0.14);
+    }
+  }
+
+  h3 {
+    margin: 0 0 0.35rem;
+    color: $morandi-ink;
+    font-size: 1.04rem;
+    line-height: 1.4;
+  }
+
+  p {
+    margin: 0 0 0.25rem;
+    color: #626b70;
+    font-size: 0.88rem !important;
+  }
+
+  span {
+    color: $morandi-mauve;
+    font-size: 0.78rem;
+    font-weight: 750;
+  }
+}
+
+.publication-year {
+  color: $morandi-blue;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.25rem;
+}
+
+.publication-list__award {
+  position: relative;
+  margin: 0.45rem 0;
+  padding-right: 1rem !important;
+  padding-left: 1rem !important;
+  background: rgba($morandi-mauve, 0.095);
+  border: 1px solid rgba($morandi-mauve, 0.16) !important;
+  border-radius: 14px;
+}
+
+.timeline {
+  position: relative;
+  margin-left: 0.5rem;
+
+  &:before {
+    position: absolute;
+    top: 0.5rem;
+    bottom: 0.5rem;
+    left: 0;
+    width: 1px;
+    content: "";
+    background: rgba($morandi-slate, 0.22);
+  }
+}
+
+.timeline-item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 145px minmax(0, 1fr);
+  gap: 1.5rem;
+  padding: 0 0 2.75rem 2rem;
+
+  &:before {
+    position: absolute;
+    top: 0.38rem;
+    left: -0.37rem;
+    width: 0.72rem;
+    height: 0.72rem;
+    content: "";
+    background: $morandi-paper;
+    border: 2px solid $morandi-mauve;
+    border-radius: 50%;
+  }
+
+  h3 {
+    margin: 0.35rem 0 0.55rem;
+    color: $morandi-ink;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.45rem;
+  }
+
+  p:last-child {
+    color: #626b70;
+  }
+}
+
+.timeline-date {
+  margin: 0;
+  color: $morandi-blue;
+  font-size: 0.82rem !important;
+  font-weight: 750;
+}
+
+.education-layout {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 1rem;
+}
+
+.education-list {
+  display: grid;
+  gap: 1rem;
+
+  article {
+    padding: 1.6rem;
+    background: rgba($morandi-white, 0.84);
+    border: 1px solid rgba($morandi-slate, 0.13);
+    border-radius: 18px;
+  }
+
+  p {
+    margin: 0;
+    color: $morandi-mauve;
+    font-size: 0.78rem !important;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  h3 {
+    margin: 0.55rem 0 0.35rem;
+    color: $morandi-ink;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.35rem;
+  }
+
+  span {
+    color: #697277;
+    font-size: 0.84rem;
+  }
+}
+
+.skills-panel {
+  padding: 1.6rem;
+  color: $morandi-white;
+  background: $morandi-slate;
+  border-radius: 18px;
+
+  > div + div {
+    padding-top: 1.1rem;
+    margin-top: 1.1rem;
+    border-top: 1px solid rgba($morandi-white, 0.14);
+  }
+
+  p {
+    margin: 0 0 0.6rem;
+    color: rgba($morandi-white, 0.68);
+    font-size: 0.72rem !important;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  li {
+    padding: 0.24rem 0.6rem;
+    color: $morandi-white;
+    background: rgba($morandi-white, 0.1);
+    border-radius: 999px;
+    font-size: 0.76rem !important;
+  }
+}
+
+.contact-panel {
+  padding: clamp(2rem, 5vw, 4.5rem);
+  margin: 1rem 0 4rem;
+  color: $morandi-white;
+  background:
+    radial-gradient(circle at 90% 20%, rgba($morandi-mauve, 0.34), transparent 30%),
+    $morandi-slate;
+  border-radius: 28px;
+  box-shadow: 0 24px 65px rgba($morandi-slate, 0.18);
+  scroll-margin-top: 6rem;
+
+  .section-label,
+  > p {
+    color: rgba($morandi-white, 0.75);
+  }
+
+  h2 {
+    max-width: 740px;
+    margin: 0.7rem 0 1rem;
+    color: $morandi-white;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(2rem, 4.5vw, 3.6rem);
+    font-weight: 500;
+    letter-spacing: -0.04em;
+    line-height: 1.08;
+  }
+}
+
+.button--light {
+  color: $morandi-slate !important;
+  background: $morandi-white;
+
+  &:hover {
+    background: $morandi-stone;
+  }
+}
+
+.page__content .contact-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 48px;
+  color: $morandi-white;
+  font-weight: 700;
+  text-decoration: none;
+
+  &:hover {
+    color: $morandi-stone;
+    text-decoration: none;
+  }
+}
+
+.site-footer {
+  display: flex;
+  justify-content: space-between;
+  max-width: $x-large;
+  padding: 1.5rem 1rem 2rem;
+  margin: 0 auto;
+  color: #727a7e;
+  border-top: 1px solid rgba($morandi-slate, 0.12);
+  font-size: 0.78rem;
+
+  p {
+    margin: 0;
+  }
+
+  a {
+    color: $morandi-slate;
+    text-decoration: none;
+  }
+}
+
+@include breakpoint(max-width $large) {
+  .sidebar {
+    display: none;
+  }
+
+  .intro-avatar {
+    display: block;
+    width: 88px;
+    height: 88px;
+    margin: 0 0 1.5rem;
+    object-fit: cover;
+    object-position: 50% 30%;
+    background: $morandi-white;
+    border: 4px solid $morandi-white;
+    border-radius: 50%;
+    box-shadow: 0 12px 32px rgba($morandi-slate, 0.2);
+  }
+}
+
+@include breakpoint(max-width $medium) {
+  .intro-panel {
+    min-height: auto;
+    border-radius: 22px;
+  }
+
+  .impact-grid,
+  .project-grid,
+  .education-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card--featured {
+    grid-template-columns: 1fr;
+  }
+
+  .result-list {
+    grid-template-columns: 1fr;
+  }
+
+  .timeline-item {
+    grid-template-columns: 1fr;
+    gap: 0.35rem;
+  }
+
+  .publication-list li {
+    grid-template-columns: 58px minmax(0, 1fr);
+    gap: 0.8rem;
+  }
+}
+
+@include breakpoint(max-width $small) {
+  #main {
+    padding-right: 0.75rem;
+    padding-left: 0.75rem;
+  }
+
+  .intro-panel {
+    padding: 2.25rem 1.15rem;
+
+    h1 {
+      font-size: clamp(2.4rem, 13vw, 3.5rem);
+    }
+  }
+
+  .impact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .portfolio-section {
+    padding: 4.5rem 0;
+  }
+
+  .contact-panel {
+    border-radius: 22px;
+  }
+
+  .site-footer {
+    gap: 1rem;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *:before,
+  *:after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@import "clean-academic";

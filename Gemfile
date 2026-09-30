@@ -11,6 +11,9 @@ source "https://rubygems.org"
 
 gem "github-pages", group: :jekyll_plugins
 
+# Ruby 3 no longer bundles WEBrick, which Jekyll/Hawkins uses for local serving.
+gem "webrick"
+
 # If you want to use Jekyll native, uncomment the line below.
 # To upgrade, run `bundle update`.
 
