@@ -1,7 +1,7 @@
 ---
 permalink: /
 title: ""
-excerpt: "Mengzhen Li is a Ph.D. candidate in Computer Science researching software reliability, automated program repair, and AI-assisted testing."
+excerpt: "Mengzhen Li is a Ph.D. candidate in Computer Science developing automated techniques for software test repair, maintenance, and reliability."
 author_profile: false
 redirect_from:
   - /about/
@@ -25,10 +25,11 @@ redirect_from:
         <a href="mailto:mialmz810@gmail.com">Email</a>
         <a href="https://github.com/mia-li-001" target="_blank" rel="noreferrer">GitHub</a>
         <a href="https://www.linkedin.com/in/mengzhen-li-3588b9249" target="_blank" rel="noreferrer">LinkedIn</a>
-        <a href="{{ '/files/Mengzhen-Li-Resume.pdf' | relative_url }}">Résumé</a>
+        <a href="{{ '/files/MengzhenLi_resume.pdf' | relative_url }}">Résumé</a>
       </nav>
     </div>
-    <p>Welcome to my homepage! I am a Ph.D. candidate in Computer Science at the University of Minnesota, advised by <a href="https://www-users.cse.umn.edu/~mfazzini/index.html" target="_blank" rel="noreferrer">Professor Mattia Fazzini</a>. My research focuses on making software testing more reliable and easier to maintain. I develop program-analysis and automated-repair techniques that use runtime information to understand and improve software test suites.</p>
+    <p>Welcome! I am a Ph.D. candidate in Computer Science at the University of Minnesota, advised by <a href="https://www-users.cse.umn.edu/~mfazzini/index.html" target="_blank" rel="noreferrer">Professor Mattia Fazzini</a>. My research focuses on the automated repair and maintenance of software test code. I build program-analysis techniques that use runtime behavior to find and fix defects while preserving intended program behavior.</p>
+    <p>My work has been evaluated on more than 500 real-world open-source projects and has led to 85 merged patches. I also led a Medtronic-sponsored collaboration that applied large-scale log analysis and sequence-based anomaly detection to safety-critical medical technology.</p>
   </div>
 </section>
 
@@ -55,18 +56,19 @@ redirect_from:
 <section class="academic-section" id="experience" aria-labelledby="experience-title">
   <div class="section-intro">
     <h2 id="experience-title">Experience</h2>
-    <p>Research experience spanning university projects, open-source software, and an industry-sponsored collaboration.</p>
+    <p>Research spanning automated software engineering, open-source ecosystems, and safety-critical industry systems.</p>
   </div>
 
   <div class="experience-list">
     <article>
       <div class="experience-list__date">June 2025–June 2026</div>
       <div>
-        <h3>Graduate Researcher — Medtronic-Sponsored Project</h3>
-        <p class="experience-list__org">University of Minnesota · Minneapolis, Minnesota</p>
+        <h3>Research Lead — Medtronic-Sponsored Industry Collaboration</h3>
+        <p class="experience-list__org">Medtronic and University of Minnesota · Minneapolis, Minnesota</p>
         <ul>
-          <li>Designed and implemented automated log analysis and sequence-based anomaly detection for large-scale Medtronic datasets.</li>
-          <li>Developed methods to improve failure management and accelerate root-cause analysis in real-world engineering data.</li>
+          <li>Led a 12-month industry-funded project from problem definition through delivery, designing automated log analysis and sequence-based anomaly detection for failure management and root-cause analysis.</li>
+          <li>Built an LSTM-based anomaly detector over more than 15 million real-world records that identified 105 confirmed bugs in operational data.</li>
+          <li>Delivered a system adopted by Medtronic engineers for internal failure triage and root-cause analysis in safety-critical medical technology.</li>
         </ul>
       </div>
     </article>
@@ -76,10 +78,11 @@ redirect_from:
         <h3>Graduate Research Assistant</h3>
         <p class="experience-list__org">University of Minnesota · Minneapolis, Minnesota</p>
         <ul>
-          <li>Developed ARUS, a Java test-repair tool evaluated across 128 projects that contributed 85 merged pull requests.</li>
-          <li>Developed REMI to detect and repair mismatched mock invocations, resolving 171 of 172 issues across 217 projects and landing seven patches.</li>
-          <li>Developed REDUST to refactor duplicated test setup, extracting 204 configurations into 68 reusable helpers across 32 projects.</li>
-          <li>Coauthored research on improving LLM-driven test generation by learning from mocking information.</li>
+          <li>Built ARUS, REMI, and REDUST to automatically repair and maintain Java test code without changing program behavior; evaluated the tools on more than 500 real-world open-source projects.</li>
+          <li>Developed ARUS to safely identify and remove unnecessary mock stubbings across 128 projects using runtime execution analysis.</li>
+          <li>Developed REMI to repair mismatched mock invocations, resolving 171 of 172 issues across 217 projects and landing seven maintainer-accepted patches.</li>
+          <li>Developed REDUST to consolidate 204 duplicated test configurations into 68 reusable helpers across 213 projects, reducing duplicated configurations by 67%.</li>
+          <li>Contributed 85 merged patches to open-source projects, including Jenkins Google OAuth and LDBC.</li>
         </ul>
       </div>
     </article>
